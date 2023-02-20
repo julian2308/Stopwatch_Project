@@ -6,6 +6,7 @@ const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 let intervalId;
+let isDisable = false;
 
 const showHour = () => {
   counterTime.innerHTML = `${hours <= 9 ? "0" + hours : hours}:${
@@ -21,10 +22,12 @@ const plusAnHour = () => {
 
 const countStart = () => {
   intervalId = setInterval(countSeconds, 1000);
+  startBtn.disabled = !isDisable
 };
 
 const countStop = () => {
   clearInterval(intervalId);
+  startBtn.disabled = isDisable
 };
 
 const countReset = () => {
