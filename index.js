@@ -1,7 +1,7 @@
 let minutes = 0;
 let seconds = 0;
 let hours = 0;
-let counterTime = document.getElementById("hour");
+const counterTime = document.getElementById("hour");
 const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
@@ -34,6 +34,7 @@ const countReset = () => {
   countStop();
   seconds = 0;
   minutes = 0;
+  hours = 0;
   showHour();
 };
 
